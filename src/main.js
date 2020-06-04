@@ -35,8 +35,8 @@ new Vue({
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         store.dispatch("autoLogin", user);
+        store.dispatch("Articles/loadArticles");
       }
     });
-    store.dispatch("Articles/loadArticles");
   },
 }).$mount("#app");
